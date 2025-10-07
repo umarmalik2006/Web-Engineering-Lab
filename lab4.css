@@ -1,0 +1,75 @@
+/* ----------- Basic Styles ----------- */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f8fff8;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ----------- Resume Container ----------- */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 100, 0, 0.1);
+}
+
+/* ----------- Headings ----------- */
+h1 {
+  color: #007f4f;
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+h2 {
+  color: #005f3f;
+  margin-top: 25px;
+  border-bottom: 2px solid #cce8d8;
+  padding-bottom: 5px;
+}
+
+/* ----------- Links & Icons ----------- */
+a {
+  color: #007f4f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ----------- Contact Section ----------- */
+.contact {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.contact img {
+  width: 18px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* ----------- Footer ----------- */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* ----------- Responsive ----------- */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+}
