@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Muhammad Umar Malik - Portfolio</title>
+  <style>
+    /* Basic Syntax & Selectors */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      color: #222;
+    }
+    header, footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Navigation Styling */
+    nav {
+      background: #34495e;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease; /* Transition */
+    }
+    nav a:hover {
+      color: #f1c40f;
+    }
+
+    /* Main Layout */
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    section {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      
+      /* Box Model */
+      border: 2px solid #ddd;
+    }
+    h2 {
+      color: #2c3e50;
+      text-align: center;
+    }
+
+    /* Graphics Canvas */
+    canvas {
+      border: 2px solid #2c3e50;
+      background: #ecf0f1;
+      display: block;
+      margin: auto;
+    }
+
+    /* Typography */
+    p {
+      line-height: 1.6;
+      font-size: 16px;
+      text-align: justify;
+    }
+    mark {
+      background: #f1c40f;
+      padding: 2px 5px;
+    }
+
+    /* Contact Form */
+    form input, form textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form input[type="submit"] {
+      background: #2c3e50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.4s ease, transform 0.3s ease; /* Transition */
+    }
+    form input[type="submit"]:hover {
+      background: #f1c40f;
+      color: black;
+      transform: scale(1.05); /* Animation on hover */
+    }
+
+    /* Float Layout Example */
+    #projects ul {
+      list-style: none;
+      padding: 0;
+    }
+    #projects li {
+      float: left;
+      width: 30%;
+      margin: 1.5%;
+      padding: 10px;
+      background: #ecf0f1;
+      text-align: center;
+      border-radius: 8px;
+    }
+    #projects::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+      #projects li {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+
+    footer a {
+      color: #f1c40f;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Welcome to My Portfolio</h1>
+    <p><mark>Muhammad Umar Malik</mark> | CMS: 474125 | Batch: Fall 2023</p>
+  </header>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#graphics">Graphics</a>
+    <a href="#media">Media</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am a Computer Science student at NUST. I enjoy programming, designing, and creating useful software tools.</p>
+      <p>Today's date is <time datetime="2025-09-23">September 23, 2025</time>.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>Notepad-like Word Processor (C++)</li>
+        <li>Custom File System (Assembly)</li>
+        <li>QuettaFood App (Flutter + Firebase)</li>
+      </ul>
+    </section>
+
+    <section id="graphics">
+      <h2>Graphics Area</h2>
+      <canvas id="myCanvas" width="300" height="150"></canvas>
+      <script>
+        // Draw something on canvas
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = "#3498db";
+        ctx.fillRect(20, 20, 100, 100);
+        ctx.fillStyle = "#e74c3c";
+        ctx.font = "20px Arial";
+        ctx.fillText("Hello Umar!", 140, 80);
+      </script>
+    </section>
+
+    <section id="media">
+      <h2>Multimedia</h2>
+      <p>Sample Audio:</p>
+      <audio controls>
+        <source src="sample.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <p>Sample Video:</p>
+      <video width="400" controls>
+        <source src="sample.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form>
+        <label>Name:</label>
+        <input type="text" name="name" required><br>
+        <label>Email:</label>
+        <input type="email" name="email" required><br>
+        <label>Message:</label>
+        <textarea name="message" required></textarea><br>
+        <input type="submit" value="Send">
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 Muhammad Umar Malik | 
+      <a href="mailto:mumarm2006@gmail.com">Email</a> | 
+      <a href="https://github.com/mumarm2006" target="_blank">GitHub</a>
+    </p>
+  </footer>
+
+</body>
+</html>

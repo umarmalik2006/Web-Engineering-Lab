@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3 Column Layout</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    .deadline {
+      color: black;
+    }
+
+    .deadline span {
+      color: red;
+      font-weight: bold;
+    }
+
+    .container {
+      border: 1px solid #a0a0ff;
+      padding: 5px;
+    }
+
+    header, footer {
+      border: 1px solid #a0a0ff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .main {
+      display: flex;
+      border: 1px solid #a0a0ff;
+      margin: 5px 0;
+    }
+
+    .left, .right {
+      width: 20%;
+      border: 1px solid #a0a0ff;
+      padding: 10px;
+    }
+
+    .content {
+      width: 60%;
+      border: 1px solid #a0a0ff;
+      padding: 10px;
+    }
+
+    /* Responsive layout for small screens */
+    @media (max-width: 768px) {
+      .main {
+        flex-direction: column;
+      }
+      .left, .content, .right {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="Assignment 1:">Assignment 1: <span>Web Engineering</span></h1>
+
+  <div class="container">
+    <header>Header</header>
+
+    <div class="main">
+      <aside class="left">
+        <ul>
+          <li>Lin 1</li>
+          <li>Lin 2</li>
+          <li>Lin 3</li>
+          <li>Lin 4</li>
+          <li>Lin 5</li>
+        </ul>
+      </aside>
+
+      <section class="content">
+        <p>
+          Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+          Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+          Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+          Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+        </p>
+      </section>
+
+      <aside class="right">
+        <ul>
+          <li>Lin 1</li>
+          <li>Lin 2</li>
+          <li>Lin 3</li>
+          <li>Lin 4</li>
+          <li>Lin 5</li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer>Footer</footer>
+  </div>
+</body>
+</html>
