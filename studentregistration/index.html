@@ -1,0 +1,180 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Student Registration Form</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Accessible fonts could be added here; kept minimal per requirements -->
+</head>
+<body>
+  <header class="site-header">
+    <h1>Student Registration</h1>
+    <p class="lead">Complete the form below to register for the semester. Fields marked with <span aria-hidden="true">*</span> are required.</p>
+  </header>
+
+  <main>
+    <!-- The form uses semantic markup, fieldsets and legends for grouping -->
+    <form class="card" action="#" method="post" novalidate>
+
+      <div class="form-grid">
+        <!-- Personal details column 1 -->
+        <fieldset>
+          <legend>Personal Details</legend>
+
+          <div class="field-row">
+            <label for="firstName">First name <span class="required">*</span></label>
+            <input id="firstName" name="firstName" type="text" required placeholder="e.g. Ali" autocomplete="given-name">
+          </div>
+
+          <div class="field-row">
+            <label for="lastName">Last name <span class="required">*</span></label>
+            <input id="lastName" name="lastName" type="text" required placeholder="e.g. Khan" autocomplete="family-name">
+          </div>
+
+          <div class="field-row">
+            <label for="studentId">Student ID <span class="required">*</span></label>
+            <input id="studentId" name="studentId" type="text" pattern="[A-Za-z0-9-]{4,20}" title="Alphanumeric, 4-20 characters" required placeholder="e.g. CMS12345">
+            <small id="sid-help" class="hint">Alphanumeric, 4–20 chars</small>
+          </div>
+
+          <div class="field-row">
+            <label for="dob">Date of birth <span class="required">*</span></label>
+            <input id="dob" name="dob" type="date" required aria-describedby="dob-help">
+            <small id="dob-help" class="hint">You must be at least 16 years old</small>
+          </div>
+
+          <div class="field-row">
+            <label>Gender</label>
+            <div class="inline-group" role="radiogroup" aria-labelledby="gender-label">
+              <label><input type="radio" name="gender" value="male"> Male</label>
+              <label><input type="radio" name="gender" value="female"> Female</label>
+              <label><input type="radio" name="gender" value="other"> Other</label>
+            </div>
+          </div>
+
+        </fieldset>
+
+        <!-- Academic & contact details column 2 -->
+        <fieldset>
+          <legend>Academic & Contact</legend>
+
+          <div class="field-row">
+            <label for="program">Program / Department <span class="required">*</span></label>
+            <select id="program" name="program" required>
+              <optgroup label="Computer Science">
+                <option value="cs-bs">BS Computer Science</option>
+                <option value="cs-ms">MS Computer Science</option>
+              </optgroup>
+              <optgroup label="Engineering">
+                <option value="ee-bs">BS Electrical Engineering</option>
+                <option value="me-bs">BS Mechanical Engineering</option>
+              </optgroup>
+              <optgroup label="Business">
+                <option value="bs-bba">BBA</option>
+                <option value="ms-mba">MBA</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="field-row">
+            <label for="year">Year / Semester <span class="required">*</span></label>
+            <select id="year" name="year" required>
+              <option value="">Select...</option>
+              <option>1 / Fall</option>
+              <option>1 / Spring</option>
+              <option>2 / Fall</option>
+              <option>2 / Spring</option>
+              <option>3 / Fall</option>
+              <option>3 / Spring</option>
+              <option>4 / Fall</option>
+              <option>4 / Spring</option>
+            </select>
+          </div>
+
+          <div class="field-row">
+            <label for="email">Email <span class="required">*</span></label>
+            <input id="email" name="email" type="email" required placeholder="name@example.edu" autocomplete="email">
+          </div>
+
+          <div class="field-row">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="e.g. +92-300-1234567" pattern="[+0-9 \-()]{7,20}">
+          </div>
+
+          <div class="field-row fullwidth">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="3" placeholder="Street, City, Postal code"></textarea>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <!-- Enrollment & courses section across full width -->
+      <fieldset>
+        <legend>Enrollment & Courses</legend>
+
+        <div class="field-row">
+          <label>Enrollment Type <span class="required">*</span></label>
+          <label><input type="radio" name="enrollType" value="full" required> Full-time</label>
+          <label><input type="radio" name="enrollType" value="part"> Part-time</label>
+        </div>
+
+        <div class="field-row">
+          <label>Courses to Register (choose one or more)</label>
+          <div class="checkbox-grid">
+            <label><input type="checkbox" name="courses" value="cs101"> CS101 - Intro to CS</label>
+            <label><input type="checkbox" name="courses" value="math101"> MATH101 - Calculus</label>
+            <label><input type="checkbox" name="courses" value="eng101"> ENG101 - Communication</label>
+            <label><input type="checkbox" name="courses" value="phy101"> PHY101 - Physics</label>
+            <label><input type="checkbox" name="courses" value="dbs101"> DBS101 - Databases</label>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <label for="campus">Preferred Campus</label>
+          <input id="campus" name="campus" list="campus-list" placeholder="Type or choose...">
+          <datalist id="campus-list">
+            <option value="Islamabad Campus">
+            <option value="Karachi Campus">
+            <option value="Lahore Campus">
+            <option value="Virtual / Online">
+          </datalist>
+        </div>
+
+        <div class="field-row">
+          <label for="photo">Profile Photo</label>
+          <input id="photo" name="photo" type="file" accept="image/*">
+        </div>
+
+        <div class="field-row">
+          <label for="password">Password <span class="required">*</span></label>
+          <input id="password" name="password" type="password" required pattern="(?=.{8,})(?=.*[A-Z])(?=.*[0-9]).*" aria-describedby="pw-help" placeholder="At least 8 chars, 1 uppercase, 1 number">
+          <small id="pw-help" class="hint">Minimum 8 chars, 1 uppercase letter and 1 number</small>
+        </div>
+
+        <div class="field-row">
+          <label for="confirm">Confirm Password <span class="required">*</span></label>
+          <input id="confirm" name="confirm" type="password" required placeholder="Re-type password">
+        </div>
+
+        <div class="field-row">
+          <label class="checkbox-inline"><input id="agree" name="agree" type="checkbox" required> I agree to the <a href="#">terms & conditions</a></label>
+        </div>
+
+        <div class="button-row">
+          <button type="reset" class="btn secondary">Reset</button>
+          <button type="submit" class="btn primary">Submit Registration</button>
+        </div>
+
+      </fieldset>
+
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <small>Computer Architecture &amp; Organization (CS-339) — Fall 2025</small>
+  </footer>
+</body>
+</html>
