@@ -1,15 +1,6 @@
-// ================================
-// Recipe Management System (Fixed)
-// ================================
-
-// Global recipe list
 let recipes = JSON.parse(localStorage.getItem("recipes_v1")) || [];
 let currentPage = 1;
 const recipesPerPage = 5;
-
-// ================================
-// Save and Load Functions
-// ================================
 
 function saveRecipes() {
   localStorage.setItem("recipes_v1", JSON.stringify(recipes));
@@ -19,10 +10,6 @@ function loadRecipes() {
   const stored = localStorage.getItem("recipes_v1");
   recipes = stored ? JSON.parse(stored) : [];
 }
-
-// ================================
-// Add New Recipe
-// ================================
 
 function addRecipe(event) {
   event.preventDefault();
@@ -63,10 +50,6 @@ function addRecipe(event) {
   }
 }
 
-// ================================
-// Edit Recipe
-// ================================
-
 function editRecipe(id) {
   const recipe = recipes.find((r) => r.id === id);
   if (!recipe) return;
@@ -102,20 +85,12 @@ function editRecipe(id) {
   };
 }
 
-// ================================
-// Delete Recipe
-// ================================
-
 function deleteRecipe(id) {
   if (!confirm("Are you sure you want to delete this recipe?")) return;
   recipes = recipes.filter((r) => r.id !== id);
   saveRecipes();
   renderRecipes();
 }
-
-// ================================
-// Render Recipes
-// ================================
 
 function renderRecipes() {
   const list = document.getElementById("recipe-list");
@@ -151,10 +126,6 @@ function renderRecipes() {
   renderPagination();
 }
 
-// ================================
-// Pagination
-// ================================
-
 function renderPagination() {
   const totalPages = Math.ceil(recipes.length / recipesPerPage);
   const pagination = document.getElementById("pagination");
@@ -173,10 +144,6 @@ function renderPagination() {
     pagination.appendChild(btn);
   }
 }
-
-// ================================
-// Search Recipes
-// ================================
 
 function searchRecipes() {
   const query = document.getElementById("search").value.toLowerCase();
@@ -210,10 +177,6 @@ function searchRecipes() {
     list.appendChild(card);
   });
 }
-
-// ================================
-// Initialize
-// ================================
 
 document.addEventListener("DOMContentLoaded", () => {
   loadRecipes();
