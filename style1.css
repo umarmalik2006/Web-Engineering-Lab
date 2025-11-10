@@ -1,0 +1,63 @@
+body{
+    background-color: aqua;
+    color: red;
+}
+p{
+    background-color: blueviolet;
+    color: white;
+}
+
+h1{
+   background-color: black;
+   color: white;
+}
+#p1{
+    border-style: solid;
+    border-color: silver;
+    border-width: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: gray;
+    color:black;
+}
+.para{
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: bold;
+    text-decoration: white wavy underline;
+    font-size: x-large;
+    background-color: brown;
+    color:chartreuse;
+}
+
+h5{
+    border-bottom: 10px;
+    border-bottom-style: dotted;
+    border-bottom-color: goldenrod;
+    border-top: 10px;
+    border-top-style: double;
+    border-top-color: goldenrod;
+}
+#box1{
+    border: 50px solid;
+    border-radius: 10px;
+    border-width: 20px;
+    border-bottom-color: red;
+    border-color: red;
+    padding: 50px;
+    margin: 80px;
+}
+
+#box2{
+
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 20px;
+    border: 20px solid;
+    border-color: blue;
+    width: 500px;
+    height: 200px;
+    font-size: 30px;
+    background-color: lightgreen;
+    color: darkorange;
+}

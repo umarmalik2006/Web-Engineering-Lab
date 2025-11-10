@@ -1,8 +1,4 @@
-/* ================================
-   Student Registration Form - Blue Theme
-   ================================ */
 
-/* CSS Variables for color scheme */
 :root {
   --primary-color: #007bff;
   --secondary-color: #0056b3;
@@ -12,7 +8,7 @@
   --border-color: #ddd;
 }
 
-/* Global Styles */
+
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background-color: var(--background-color);
@@ -24,7 +20,7 @@ body {
   align-items: center;
 }
 
-/* Header */
+
 header {
   text-align: center;
   margin-top: 40px;
@@ -41,7 +37,7 @@ header p {
   font-size: 1rem;
 }
 
-/* Form Container */
+
 main {
   background-color: var(--card-bg);
   margin: 30px auto;
@@ -52,14 +48,13 @@ main {
   max-width: 950px;
 }
 
-/* Grid layout */
 form {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 25px;
 }
 
-/* Fieldsets */
+
 fieldset {
   border: 2px solid var(--border-color);
   border-radius: 10px;
@@ -71,7 +66,7 @@ legend {
   color: var(--secondary-color);
 }
 
-/* Input and Select Fields */
+
 input, select, textarea {
   width: 100%;
   padding: 10px;
@@ -88,19 +83,17 @@ input:focus, select:focus, textarea:focus {
   outline: none;
 }
 
-/* Radio and Checkbox groups */
 .radio-group, .checkbox-group {
   display: flex;
   gap: 10px;
   margin-top: 8px;
 }
 
-/* Labels */
 label {
   font-weight: 500;
 }
 
-/* Buttons */
+
 button {
   background-color: var(--primary-color);
   color: white;
@@ -117,7 +110,7 @@ button:hover {
   transform: scale(1.02);
 }
 
-/* Submit and Reset button container */
+
 .form-actions {
   grid-column: 1 / -1;
   display: flex;
@@ -126,7 +119,7 @@ button:hover {
   margin-top: 25px;
 }
 
-/* Responsive Layout */
+
 @media (max-width: 768px) {
   main {
     width: 95%;
