@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multi Step Form</title>
+  <style>
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+<div id="step1">
+  <h2>Step 1</h2>
+  <input id="name" placeholder="Enter Name"><br><br>
+  <input id="email" placeholder="Enter Email"><br><br>
+  <button onclick="nextStep()">Next</button>
+</div>
+
+<div id="step2" class="hidden">
+  <h2>Step 2</h2>
+  <input id="username" placeholder="Enter Username"><br><br>
+  <input id="password" placeholder="Enter Password"><br><br>
+  <button onclick="prevStep()">Previous</button>
+  <button onclick="nextStep()">Next</button>
+</div>
+
+<div id="step3" class="hidden">
+  <h2>Step 3</h2>
+  <div id="review"></div><br>
+  <button onclick="prevStep()">Previous</button>
+  <button onclick="handleSubmission()">Submit</button>
+</div>
+
+<script>
+let currentStep = 1;
+
+let formData = {
+  name: "",
+  email: "",
+  username: "",
+  password: ""
+};
+
+function showStep(n) {
+  document.getElementById("step1").classList.add("hidden");
+  document.getElementById("step2").classList.add("hidden");
+  document.getElementById("step3").classList.add("hidden");
+  document.getElementById("step" + n).classList.remove("hidden");
+}
+
+function validateStep(n) {
+  if (n === 1) {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    if (name === "") return alert("Name cannot be empty"), false;
+    if (!email.includes("@") || !email.includes(".")) return alert("Invalid email"), false;
+    return true;
+  }
+  if (n === 2) {
+    let u = document.getElementById("username").value.trim();
+    let p = document.getElementById("password").value.trim();
+    if (u.length < 5) return alert("Username must be 5+ characters"), false;
+    if (p.length < 8) return alert("Password must be 8+ characters"), false;
+    return true;
+  }
+  return true;
+}
+
+function nextStep() {
+  if (!validateStep(currentStep)) return;
+
+  if (currentStep === 2) {
+    formData.name = document.getElementById("name").value;
+    formData.email = document.getElementById("email").value;
+    formData.username = document.getElementById("username").value;
+    formData.password = document.getElementById("password").value;
+    document.getElementById("review").innerHTML =
+      "Name: " + formData.name + "<br>" +
+      "Email: " + formData.email + "<br>" +
+      "Username: " + formData.username;
+  }
+
+  currentStep++;
+  showStep(currentStep);
+}
+
+function prevStep() {
+  currentStep--;
+  showStep(currentStep);
+}
+
+function submitApplication(data) {
+  return new Promise(res => {
+    setTimeout(() => {
+      res({
+        success: true,
+        id: Math.random().toString(36).substring(2, 9)
+      });
+    }, 2000);
+  });
+}
+
+async function handleSubmission() {
+  let r = await submitApplication(formData);
+  if (r.success) {
+    document.getElementById("step3").innerHTML =
+      "<h2>Submitted Successfully</h2>" +
+      "Application ID: <b>" + r.id + "</b>";
+  }
+}
+
+showStep(1);
+</script>
+
+</body>
+</html>
